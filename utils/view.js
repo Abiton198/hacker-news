@@ -1,1 +1,1 @@
-export default document.querySelector('#router-outlet')
+export default document.querySelector ('#router-outlet')
