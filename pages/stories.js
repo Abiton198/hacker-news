@@ -1,4 +1,6 @@
 import view from "../utils/view.js"
+import Story from "../Components/stories.js"
+import baseUrl from "../utils/baseUrl.js"
 
 export default async function Stories(path) { //path refers to each route
     //call the func
@@ -6,7 +8,7 @@ export default async function Stories(path) { //path refers to each route
    const hasStory = stories.length > 0 //to check if there is any story(should be > 0)
    console.log(stories)
    //use map to iterate over the data given from API // use JSON.stringify to get object data ===.map()
-    view.innerHTML =  `<div>${hasStory ? stories.map((story, i) => ({...story, index: i + 1})).join(' ') : 'no story'}</div>`
+    view.innerHTML =  `<div>${hasStory ? stories.map((story, i) => Story({ ...story, index: i + 1})).join('') : 'no story'}</div>`
 } //displaying the stories on the page using innerHTML
 //index: i+ 1 === to get number run down of stories from 1...
 //.join() === to join items of an array into one string 
@@ -21,7 +23,7 @@ if(isHomeRoute){
 }else if(isNewestRoute){
     path = '/newest'
 }
-const response = await fetch(`https://node-hnapi.herokuapp.com${path}`)
+const response = await fetch(`${baseUrl}${path}`)
 const stories = await response.json()
 return stories
 }
