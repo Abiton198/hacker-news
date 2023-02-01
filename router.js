@@ -1,5 +1,6 @@
 import Stories from "./pages/stories.js"
 import Item from "./pages/item.js"
+import store from "./store.js"
 
 
 const router = new Navigo(null, true, '#')

@@ -6,7 +6,8 @@ export default async function Stories(path) { //path refers to each route
     //call the func
    const stories =  await getStories(path)
    const hasStory = stories.length > 0 //to check if there is any story(should be > 0)
-   console.log(stories)
+//    console.log(stories)
+
    //use map to iterate over the data given from API // use JSON.stringify to get object data ===.map()
     view.innerHTML =  `<div>${hasStory ? stories.map((story, i) => Story({ ...story, index: i + 1})).join('') : 'no story'}</div>`
 } //displaying the stories on the page using innerHTML

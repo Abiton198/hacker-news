@@ -1,6 +1,7 @@
 import Story from '../Components/stories.js' // Story funct 
 import view from '../utils/view.js'
 import baseUrl from '../utils/baseUrl.js'
+import Comment from '../Components/comments.js'
 
 export default async function Item(){
     let story = null  //story wil retain an object
@@ -26,10 +27,11 @@ export default async function Item(){
         ${Story(story)}
     </div>
         <hr/>
-        ${hasComment ? story.comments.map(comment => JSON.stringify(comment)).join('') : 'No comment'}
+        ${hasComment ? story.comments.map(comment => Comment(comment)).join('') : 'No comment'}
     ` //item should display story based on fetched ID
     //JSON.stringify === making the array contents readable
     //.join('') makes returned array items into a string 
+    //JSON.stringfy replaced by Comments imported from Comments component
 }
 
 async function getItem(){
