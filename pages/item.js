@@ -1,4 +1,4 @@
-import Story from '../Components/stories.js' // Story funct 
+import Story from '../Components/story.js' // Story funct 
 import view from '../utils/view.js'
 import baseUrl from '../utils/baseUrl.js'
 import Comment from '../Components/comments.js'

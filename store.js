@@ -15,7 +15,7 @@ const initialState = {
 }
 
 //reducer - ordinary func that takes 2 parameters state & action(what we want to do)
-function favoriteReducer(state = [initialState], action){
+function favoritesReducer(state = [initialState], action){
     switch(action.type){ //what we want to do add/remove favorites
     case 'ADD_FAVORITES':{
        const addedFavorite = action.payload.favorite //where favorites added are found
@@ -31,11 +31,11 @@ function favoriteReducer(state = [initialState], action){
          return state
     }
 }
-const action = {type:'ADD_FAVORITES' , payload: {favorite: {title:'story 1', id : 1}}} //payload provides the data into the[]
+// const action = {type:'ADD_FAVORITES' , payload: {favorite: {title:'story 1', id : 1}}} //payload provides the data into the[]
 
-const store = createStore(favoriteReducer)
-store.dispatch(action) //the call to dispatch action and update function
-console.log(store.getState())
+const store = createStore(favoritesReducer)
+// store.dispatch(action) //the call to dispatch action and update function
+// console.log(store.getState())
 
 export default store // export the whole action and state to the rest of our app
 

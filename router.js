@@ -1,6 +1,7 @@
 import Stories from "./pages/stories.js"
 import Item from "./pages/item.js"
-import store from "./store.js"
+import Favorites from "./pages/favorites.js"
+
 
 
 const router = new Navigo(null, true, '#')
@@ -18,7 +19,9 @@ export default class RouteHandler{
             { path: '/new', page: Stories },
             { path: '/ask', page: Stories },
             { path: '/show', page: Stories },
-            { path: '/item', page: Item} 
+            { path: '/item', page: Item},
+            { path: '/favorites', page: Favorites} 
+
         ]
         //on() = iliterates on every router and declares what should be displayed on page (has 2 para one callback func)
         routes.forEach(({path, page}) => { //object destructuring or  route.page/ route.path
